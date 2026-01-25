@@ -1,0 +1,20 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>TasteTracker</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        {% if session.get('user_id') %}
+            <a href="/logout">Logout</a>
+        {% else %}
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        {% endif %}
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

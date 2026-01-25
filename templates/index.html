@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+{% block content %}
+<h1>Restaurant Reviews</h1>
+
+{% if session.get('user_id') %}
+<h3>Add Review</h3>
+<form method="post" action="/add">
+    <input name="restaurant" placeholder="Restaurant" required>
+    <input name="rating" type="number" min="1" max="5" placeholder="Rating" required>
+    <button>Add</button>
+</form>
+{% endif %}
+
+<h3>All Reviews</h3>
+{% if reviews %}
+    {% for r in reviews %}
+        <p><strong>{{ r["restaurant"] }}</strong> – {{ r["rating"] }}/5</p>
+    {% endfor %}
+{% else %}
+    <p>No reviews yet.</p>
+{% endif %}
+{% endblock %}

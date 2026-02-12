@@ -1,9 +1,14 @@
 
 from flask import Flask, render_template
 from database import get_db
+from auth import auth
+from reviews import reviews_bp
 
 app = Flask(__name__)
 app.secret_key = "dev"
+
+app.register_blueprint(auth)
+app.register_blueprint(reviews_bp)
 
 @app.route("/")
 def index():

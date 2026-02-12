@@ -1,0 +1,16 @@
+{
+	"name": "TasteTracker",
+	"short_name": "TasteTracker",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#FADADD",
+	"theme_color": "#222222",
+	"description": "Restaurant reviews across Bathurst and the Central West",
+	"icons": [
+		{
+			"scr": "/static/icons/image.png",
+			"sizes": "1024x1024",
+			"type": "image/png"
+		}
+	]
+}
